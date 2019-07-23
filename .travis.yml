@@ -1,0 +1,64 @@
+language: cpp
+dist: xenial
+compiler:
+  - gcc
+  # - clang 
+
+addons: 
+  apt: 
+    packages: 
+      - libboost-all-dev
+      - mercurial
+      - scons 
+      - libsdl1.2-dev 
+      - libsdl-net1.2-dev 
+      - libsdl-image1.2-dev
+      - libsdl-ttf2.0-dev 
+      - zlibc 
+      - libspeex-dev 
+      - libogg-dev 
+      - libvorbis-dev 
+      - libboost-thread-dev
+      - libboost-date-time-dev
+      - qt5-qmake 
+      - qt5-default
+      - cppcheck
+      - valgrind
+      - sloccount
+
+install: 
+  # Codecov
+  - sudo pip install codecov
+  # OCLint
+  - ./install_oclint
+
+services:
+ - xvfb
+
+script: 
+  - #qmake -qt=qt5 djog_unos_2018.pro
+  - #make --silent debug
+  - #./djog_unos_2018 --version
+  - echo "Hello"
+  # Call OCLint
+  #- ./do_oclint
+  # Get code coverage
+  #- cp debug/*.* .
+  #- ./get_code_cov
+  #- codecov
+  # helgrind: takes long
+  # - if [[ $TRAVIS_BRANCH == "richel" ]]; then travis_wait 50 valgrind --tool=helgrind --verbose --log-file=helgrind.log -v ./djog_unos_2018 --god --short 1; fi
+  # - if [[ $TRAVIS_BRANCH == "richel" ]]; then cat helgrind.log; fi
+  # cppcheck
+  #- travis_wait 50 cppcheck --quiet --error-exitcode=1 .
+  # SLOCcount
+  #   remove OCLint and .git, otherwise it will be counted as well
+  #- rm -rf oclint-0.10.3 oclint-0.10.3-x86_64-linux-3.13.0-74-generic.tar.gz oclint.log
+  #- rm -rf .git
+  #- rm -rf debug
+  #- rm -rf debug
+  #- cd ..; sloccount --overhead 1 --personcost 22614 djog_unos_2018 | egrep -v "Adding"; cd djog_unos_2018
+
+after_success:
+  # Codecov
+  #- bash <(curl -s https://codecov.io/bash)
