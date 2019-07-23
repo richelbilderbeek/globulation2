@@ -40,6 +40,7 @@ script:
   - #make --silent debug
   - #./djog_unos_2018 --version
   - echo "Hello"
+  - hg clone https://bitbucket.org/giszmo/glob2
   # Call OCLint
   #- ./do_oclint
   # Get code coverage
