@@ -28,7 +28,7 @@ install:
   # Codecov
   - sudo pip install codecov
   # OCLint
-  - ./install_oclint
+  #- ./install_oclint
 
 services:
  - xvfb
@@ -37,8 +37,8 @@ script:
   # Clone source
   - hg clone https://bitbucket.org/giszmo/glob2
   # Build source
-  - cd glob2
-  - scons
+  - cd glob2 ; scons
+  #- ./glob2/src/glob2
   # Call OCLint
   #- ./do_oclint
   # Get code coverage
