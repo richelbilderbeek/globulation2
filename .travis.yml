@@ -36,11 +36,11 @@ services:
  - xvfb
 
 script: 
-  - #qmake -qt=qt5 djog_unos_2018.pro
-  - #make --silent debug
-  - #./djog_unos_2018 --version
-  - echo "Hello"
+  # Clone source
   - hg clone https://bitbucket.org/giszmo/glob2
+  # Build source
+  - cd glob2
+  - scons
   # Call OCLint
   #- ./do_oclint
   # Get code coverage
