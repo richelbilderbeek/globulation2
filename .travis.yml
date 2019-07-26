@@ -67,7 +67,6 @@ script:
   #- rm -rf debug
   #- cd ..; sloccount --overhead 1 --personcost 22614 djog_unos_2018 | egrep -v "Adding"; cd djog_unos_2018
   # Check dead links
-  - rm .travis.yml
   - ./scripts/check_dead_links
 
 after_success:
