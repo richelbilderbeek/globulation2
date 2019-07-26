@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Usage:
+#
+# sudo ./globulation2/scripts/install_cppunit
+#
+#
+git clone git://anongit.freedesktop.org/git/libreoffice/cppunit/
+cd cppunit
+./autogen.sh
+./configure
+make
+make check # optional
+sudo make install
+
+
