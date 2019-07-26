@@ -1,5 +1,11 @@
 # globulation2
 
+Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
+---|---
+`master`|[![Build Status](https://travis-ci.org/richelbilderbeek/globulation2.svg?branch=master)](https://travis-ci.org/richelbilderbeek/globulation2)
+`develop`|[![Build Status](https://travis-ci.org/richelbilderbeek/globulation2.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/globulation2)
+`scons`|[![Build Status](https://travis-ci.org/richelbilderbeek/globulation2.svg?branch=scons)](https://travis-ci.org/richelbilderbeek/globulation2)
+
 Tutorials and how to get hands-on experience with the
 Globulations 2's source code.
 
@@ -26,8 +32,7 @@ See [.travis.yml](.travis.yml) for the complete Globulation 2 build process.
 
 There are two options:
 
- * Using `scons`: this is the build system the Globulation 2 developers
-   using
+ * Using `scons`: this is the build system the Globulation 2 developers use
  * Using `qmake`: my personal favorite build system
 
 ### How to build the actual Globulation2 code using `scons`?
@@ -53,3 +58,10 @@ make
 
 See [.travis.yml](.travis.yml) for the complete Globulation 2 build process.
 
+### What are the branches?
+
+Branch   |Description
+---------|-----------------------------
+`master` |Stable branch using `qmake`
+`develop`|Unstable branch using `qmake`
+`scons`  |Stable branch using `scons`
