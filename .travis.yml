@@ -41,7 +41,7 @@ script:
   # Clone source
   - hg clone https://bitbucket.org/giszmo/glob2
   # Build source using scons
-  - if [[ $TRAVIS_BRANCH == "scons" ]]; then cd glob2; scons; fi
+  - if [[ $TRAVIS_BRANCH == "scons" ]]; then cd glob2; scons; cd .. ; fi
   # Build source with qmake
   - if [[ $TRAVIS_BRANCH != "scons" ]]; then qmake; fi
   - if [[ $TRAVIS_BRANCH != "scons" ]]; then make --silent; fi
