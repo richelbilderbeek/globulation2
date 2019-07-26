@@ -37,11 +37,13 @@ script:
   # Clone source
   - hg clone https://bitbucket.org/giszmo/glob2
   # Build source using scons
-  #- cd glob2 ; scons
+  - if [[ $TRAVIS_BRANCH == "scons" ]]; then cd glob2; scons; fi
   # Build source with qmake
-  - qmake
-  - make
-  #- ./glob2/src/glob2
+  - if [[ $TRAVIS_BRANCH != "scons" ]]; then qmake; fi
+  - if [[ $TRAVIS_BRANCH != "scons" ]]; then make --silent; fi
+  # Run the game
+  - if [[ $TRAVIS_BRANCH == "scons" ]]; then ./glob2/src/glob2 &; fi
+  - if [[ $TRAVIS_BRANCH != "scons" ]]; then ./globulation2 &; fi
   # Call OCLint
   #- ./do_oclint
   # Get code coverage
