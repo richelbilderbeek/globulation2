@@ -29,6 +29,10 @@ install:
   - sudo pip install codecov
   # OCLint
   #- ./install_oclint
+  # Check dead links
+  - sudo apt-get install -qq npm
+  - npm config set strict-ssl false
+  - sudo npm install -g markdown-link-check
 
 services:
  - xvfb
@@ -62,7 +66,13 @@ script:
   #- rm -rf debug
   #- rm -rf debug
   #- cd ..; sloccount --overhead 1 --personcost 22614 djog_unos_2018 | egrep -v "Adding"; cd djog_unos_2018
+  # Check dead links
+  - rm .travis.yml
+  - ./scripts/check_dead_links
 
 after_success:
   # Codecov
   #- bash <(curl -s https://codecov.io/bash)
+
+
+
