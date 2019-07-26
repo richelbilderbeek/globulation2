@@ -9,6 +9,7 @@ Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)
 Tutorials and how to get hands-on experience with the
 Globulations 2's source code.
 
+
 ## Tutorial videos
 
 Title                   |YouTube                              |Download
@@ -65,3 +66,7 @@ Branch   |Description
 `master` |Stable branch using `qmake`
 `develop`|Unstable branch using `qmake`
 `scons`  |Stable branch using `scons`
+
+## Links
+
+ * Main repo: [https://bitbucket.org/giszmo/glob2](https://bitbucket.org/giszmo/glob2)
