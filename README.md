@@ -62,7 +62,7 @@ ln -s glob2/data
 
  * Open the project file `globulation2` in Qt Creator.
  * Build the project
- * Add a symbolic link in the build folder.
+ * Add a symbolic link in the build folder to the `glob2/data` folder
 
 For example, my folder structure is:
 
@@ -72,6 +72,17 @@ For example, my folder structure is:
 
 So within `build-globulation2-Desktop-Debug`, I 
 do `ln -s ../globulation2/glob2/data`.
+
+ * Add a symbolic link in the build folder to the `glob2/maps` folder
+
+For example, my folder structure is:
+
+ * `my_folder`
+   * `globulation2`: this reposiroy's folder
+   * `build-globulation2-Desktop-Debug`: the build folder
+
+So within `build-globulation2-Desktop-Debug`, I 
+do `ln -s ../globulation2/glob2/maps`.
 
 See [.travis.yml](.travis.yml) for the complete Globulation 2 build process.
 
