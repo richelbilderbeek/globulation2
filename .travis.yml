@@ -45,9 +45,9 @@ script:
   # Build source with qmake
   - if [[ $TRAVIS_BRANCH != "scons" ]]; then qmake; fi
   - if [[ $TRAVIS_BRANCH != "scons" ]]; then make --silent; fi
-  # Run the game
-  - if [[ $TRAVIS_BRANCH == "scons" ]]; then ./glob2/src/glob2 &; fi
-  - if [[ $TRAVIS_BRANCH != "scons" ]]; then ./globulation2 &; fi
+  # Check if build was successfull
+  - if [[ $TRAVIS_BRANCH == "scons" ]]; then if [ ! -f glob2/src/glob2 ]; then echo "scons build failed" ; exit 1 ; fi; fi
+  - if [[ $TRAVIS_BRANCH == "scons" ]]; then if [ ! -f globulation2 ]; then echo "qmake build failed" ; exit 1 ; fi; fi
   # Call OCLint
   #- ./do_oclint
   # Get code coverage
