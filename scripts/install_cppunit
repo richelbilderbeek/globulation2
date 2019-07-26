@@ -1,8 +1,10 @@
 #!/bin/bash
+# 
+# Builds and installs the CppUnit library
 #
 # Usage:
 #
-# sudo ./globulation2/scripts/install_cppunit
+#   sudo ./globulation2/scripts/install_cppunit
 #
 #
 git clone git://anongit.freedesktop.org/git/libreoffice/cppunit/
