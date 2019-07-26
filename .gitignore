@@ -32,3 +32,5 @@
 *.app
 glob2/
 *.pro.user
+Makefile
+.qmake.stash
