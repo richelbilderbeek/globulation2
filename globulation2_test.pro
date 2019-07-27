@@ -1,8 +1,13 @@
 include(globulation2.pri)
+include(globulation2_test.pri)
+include(cppunit.pri)
 SOURCES += glob2/test/TestsRunner.cpp
 
 TEMPLATE = app
-TARGET = globulation2
+TARGET = globulation2_test
+
+# Unique to tests
+LIBS += -ldl
 
 INCLUDEPATH += $$PWD/glob2
 INCLUDEPATH += $$PWD/glob2/libgag/include
