@@ -1,5 +1,5 @@
 language: cpp
-dist: bionic
+dist: xenial # Must use Xenial here
 compiler: gcc
 
 addons: 
